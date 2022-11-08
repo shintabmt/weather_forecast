@@ -34,7 +34,7 @@ class WeatherActivity : AppCompatActivity() {
     }
 
     private fun onInit() = with(binding) {
-        if (!RootUtil.isDeviceRooted()) {
+        if (RootUtil.isDeviceRooted()) {
             Toast.makeText(
                 this@WeatherActivity,
                 getString(R.string.device_rooted_error),
