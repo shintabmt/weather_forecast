@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Weather Forecast</string>
 
+    <string name="search">Search</string>
     <string name="get_weather">Get Weather</string>
     <string name="date">Date: %s</string>
     <string name="temperature">Average Temperature: %s&#176;C</string>
@@ -9,4 +10,5 @@
     <string name="description">Description: %s</string>
 
     <string name="general_error">An error has occur: %s</string>
+    <string name="device_rooted_error">This device is rooted!</string>
 </resources>

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.weatherforecast.R
 import com.example.weatherforecast.databinding.ActivityWeatherBinding
 import com.example.weatherforecast.ui.adapter.WeatherAdapter
+import com.example.weatherforecast.utils.RootUtil
 import com.example.weatherforecast.utils.ValueConst.QUERY_LIMIT_LENGTH
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,6 +34,14 @@ class WeatherActivity : AppCompatActivity() {
     }
 
     private fun onInit() = with(binding) {
+        if (!RootUtil.isDeviceRooted()) {
+            Toast.makeText(
+                this@WeatherActivity,
+                getString(R.string.device_rooted_error),
+                Toast.LENGTH_LONG
+            ).show()
+            this@WeatherActivity.finish()
+        }
         adapter = WeatherAdapter()
         rvWeather.layoutManager = LinearLayoutManager(this@WeatherActivity)
         rvWeather.adapter = adapter
